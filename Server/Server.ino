@@ -1,3 +1,62 @@
+/*  10.060 - Web server
+   This example sketch creates a web server that is running on the ESP32.
+   Use a browser to connect to the ESP32 webserver. The landing page shows
+   the temperature and humidity. You can click on the hyperlinks to control the
+   state of the built-in LED (GPIO2)
+   This sketch was written by Peter Dalmaris using information from the
+   ESP32 datasheet and examples. You can find the original example notes below. I have
+   extended the example to show the BME280 readings.
+   Components
+   ----------
+    - ESP32 Dev Kit v4
+    - BME280
+    IDE
+    ---
+    Arduino IDE with ESP32 Arduino Code
+    (https://github.com/espressif/arduino-esp32)
+    Libraries
+    ---------
+    - WiFi
+    - Adafruit_Sensor
+    - Adafruit_BME280
+    
+   Connections
+   -----------
+   Connect the sensor breakout like this:
+    ESP32   |    BME280
+   -------------------
+    3.3V   |    Vin
+    GND    |    GND
+    GPIO22 |    SCL
+    GPIO21 |    SDA
+    Other information
+    -----------------
+    1. ESP32 Datasheet: https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
+    2. WiFi library: https://github.com/espressif/arduino-esp32/tree/master/libraries/WiFi
+    3. Web server library: https://github.com/espressif/arduino-esp32/tree/master/libraries/WebServer
+    4. Learn about HTTP: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+    Created on April 8 2019 by Peter Dalmaris
+*/
+
+/*  ORIGINAL EXAMPLE NOTES
+  WiFi Web Server LED Blink
+  A simple web server that lets you blink an LED via the web.
+  This sketch will print the IP address of your WiFi Shield (once connected)
+  to the Serial monitor. From there, you can open that address in a web browser
+  to turn on and off the LED on pin 5.
+  If the IP address of your shield is yourAddress:
+  http://yourAddress/H turns the LED on
+  http://yourAddress/L turns it off
+  This example is written for a network using WPA encryption. For
+  WEP or WPA, change the Wifi.begin() call accordingly.
+  Circuit:
+   WiFi shield attached
+   LED attached to pin 5
+  created for arduino 25 Nov 2012
+  by Tom Igoe
+  ported for sparkfun esp32
+  31.01.2017 by Jan Hendrik Berlin
+*/
 #include <WiFi.h>
 #include <WebServer.h>
 
