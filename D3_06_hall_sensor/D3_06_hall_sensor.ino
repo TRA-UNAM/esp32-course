@@ -10,7 +10,6 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  Serial.println("-250," +String(hallRead()) + ",250");   //Se agregan los valores para reflejar un cambio en la escala del "serial plotter"
-  
+  Serial.println("-250," + String(hallRead()) + ",250");   //Se agregan los valores para reflejar un cambio en la escala del "serial plotter"
   delay(25);
 }

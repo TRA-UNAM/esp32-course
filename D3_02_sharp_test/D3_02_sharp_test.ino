@@ -10,7 +10,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   int reading = analogRead(34);           //sharp sensor conected to the GPIO34
-  int calculated = (6762/(reading-9))-4;  //Es calculado con la lectura del ADC de 10bits del arduino
+  int calculated = (6762 / (reading-9)) - 4;  //Es calculado con la lectura del ADC de 10bits del arduino
 
   Serial.println(calculated);
   delay(200);
